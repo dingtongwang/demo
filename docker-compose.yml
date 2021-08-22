@@ -1,0 +1,18 @@
+version: '3.4'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: demo-mysql-master
+    environment:
+      MYSQL_DATABASE: demo_info
+      MYSQL_USER: local
+      MYSQL_PASSWORD: local
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    ports:
+      - "3360:3306"
+    volumes:
+      - my-db:/var/lib/mysql
+
+volumes:
+  my-db:

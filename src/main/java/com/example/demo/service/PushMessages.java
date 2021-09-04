@@ -21,7 +21,7 @@ public class PushMessages {
     sendMessage();
   }
 
-  @Scheduled(fixedRate = 5000)
+//  @Scheduled(fixedRate = 5000)
   private void sendMessage() {
     simpMessagingTemplate.convertAndSend(topic, message);
   }
